@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+ 	<link th:rel="stylesheet" th:href="@{/webjars/bootstrap/3.4.1/css/bootstrap.min.css} " />
+	</head>
+	<body>
+			<div class="container">
+				<h2>Add a new Shopping Item</h2>
+				<form action="#" th:action="@{/shopping}" th:object="${shoppingItem}" method="POST">
+					<div class="mb-3">
+						<h3 class="form-label" for="description">Description</h3>
+						<input class="form-control" type="text" th:field="*{description}" id="descriprion" placeholder="Add description" />
+					</div>
+					<br>
+					<button class="btn btn-success" type="submit">Add Shopping Item </button>
+				</form>
+			</div>
+	</body>		
+</html>

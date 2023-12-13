@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+ 	<link th:rel="stylesheet" th:href="@{/webjars/bootstrap/3.4.1/css/bootstrap.min.css} " />
+	</head>
+	<body>
+	<div class="container">
+		<h1 class="text-center">Shopping List</h1>
+		<hr />
+		<table class="table">
+			<thead class="table text-center">
+				<tr>
+					<th scope="col">Actions</th>
+					<th scope="col">ID</th>
+					<th scope="col">Description</th>
+					<th scope="col">Complete</th>
+					<th scope="col">Created Date</th>
+					<th scope="col">Modified Date</th>
+				</tr>
+			</thead>		
+			<tbody>
+				<tr th:each="item : ${shoppingItems}" th:class="${item.complete} ? success : light">
+					<td><div class="btn" role="group">
+						 <a class="btn btn-info" th:href="@{/edit/{id}(id=${item.id})}">Edit</a>
+                         <a class="btn btn-danger" th:href="@{/delete/{id}(id=${item.id})}">Delete</a>
+					</div>
+					</td>
+					<td th:text="${item.id}">item_id</td>
+					<td th:text="${item.description}">item_description</td>
+					<td th:text="${item.complete}">item_complete</td>
+					<td th:text="${item.createdDate}">item_createdDate</td>
+					<td th:text="${item.modifiedDate}">item_modifiedDate</td>
+				</tr>				
+			</tbody>	
+		</table>
+		<p><a class="btn btn-success" href="/create-shopping">Add a Shopping Item</a></p>
+	</div>
+ 	<script th:src="@{/webjars/jquery/3.6.0/jquery.min.js}"></script>
+    <script th:src="@{/webjars/bootstrap/3.4.1/js/bootstrap.min.js}"></script>
+	</body>		
+</html>
