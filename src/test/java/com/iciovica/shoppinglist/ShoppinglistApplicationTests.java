@@ -1,10 +1,10 @@
-package com.iciovica.Todo;
+package com.iciovica.shoppinglist;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ToDoApplicationTests {
+class ShoppinglistApplicationTests {
 
 	@Test
 	void contextLoads() {
